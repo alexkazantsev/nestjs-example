@@ -1,4 +1,5 @@
-import { Get, Controller, Post } from '@nestjs/common';
+import { Get, Controller, Post, UseGuards } from '@nestjs/common';
+import { AuthGuard } from '@nestjs/passport';
 import { ApiUseTags } from '@nestjs/swagger';
 
 import { User } from './user.entity';
@@ -15,6 +16,7 @@ export class UserController {
     return this.userService.findAll();
   }
 
+  @UseGuards(AuthGuard('jwt'))
   @Post()
   async create(): Promise<boolean> {
     return true;

@@ -1,7 +1,10 @@
 import { Get, Controller, Post } from '@nestjs/common';
+import { ApiUseTags } from '@nestjs/swagger';
+
 import { User } from './user.entity';
 import { UserService } from './user.service';
 
+@ApiUseTags('user')
 @Controller('user')
 export class UserController {
 

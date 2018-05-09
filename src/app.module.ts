@@ -9,8 +9,8 @@ import { ORM_COFIG } from './config';
 @Module({
   imports: [
     TypeOrmModule.forRoot(ORM_COFIG),
-    UserModule,
     AuthModule,
+    UserModule,
   ],
   controllers: [AppController],
   providers: [],

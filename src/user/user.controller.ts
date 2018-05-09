@@ -16,8 +16,8 @@ export class UserController {
     return this.userService.findAll();
   }
 
-  @UseGuards(AuthGuard('jwt'))
   @Post()
+  @UseGuards(AuthGuard('jwt'))
   async create(): Promise<boolean> {
     return true;
   }

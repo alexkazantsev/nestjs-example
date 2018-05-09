@@ -23,9 +23,9 @@ export class ReqeustLoggerInterceptor implements NestInterceptor {
       (...args) => {
         const { originalUrl, method, res: { statusCode } } = dataOrRequest;
         const isError = statusCode >= 400;
+        process.stdout.write(colorizedText(isError, `[APP] ${process.pid}  - `));
         process.stdout.write(colorizedFont(isError, method));
         process.stdout.write(colorizedText(isError, ` ${originalUrl} - `));
-        process.stdout.write(colorizedText(isError, `[${process.pid}] - `));
         process.stdout.write(`${new Date(Date.now()).toLocaleString()} `);
         process.stdout.write(clc.yellow(`+${Date.now() - now}ms`));
         process.stdout.write('\n');

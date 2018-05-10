@@ -1,5 +1,5 @@
 import * as winston from 'winston';
-import { LOG_LEVEL } from './../config';
+import { LOG_LEVEL } from './../../config';
 
 const logger = new winston.Logger({
   transports: [new winston.transports.Console({

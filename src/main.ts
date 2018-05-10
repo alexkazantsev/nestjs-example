@@ -3,7 +3,7 @@ import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import * as cors from 'cors';
 
 import { ApplicationModule } from './app.module';
-import { ReqeustLoggerInterceptor } from './interceptors';
+import { ReqeustLoggerInterceptor } from './common/interceptors';
 
 async function bootstrap() {
   const app = await NestFactory.create(ApplicationModule);

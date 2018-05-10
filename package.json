@@ -17,6 +17,8 @@
     "@nestjs/testing": "^5.0.0-rc.3",
     "@nestjs/typeorm": "^2.0.0",
     "@nestjs/websockets": "^5.0.0-rc.3",
+    "class-transformer": "^0.1.9",
+    "class-validator": "^0.8.5",
     "cli-color": "^1.2.0",
     "cors": "^2.8.4",
     "jsonwebtoken": "^8.2.1",

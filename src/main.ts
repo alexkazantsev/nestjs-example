@@ -4,11 +4,13 @@ import * as cors from 'cors';
 
 import { ApplicationModule } from './app.module';
 import { ReqeustLoggerInterceptor } from './common/interceptors';
+import { ValidationPipe } from './common/pipes/validation.pipe';
 
 async function bootstrap() {
   const app = await NestFactory.create(ApplicationModule);
   app.use(cors());
   app.useGlobalInterceptors(new ReqeustLoggerInterceptor());
+  app.useGlobalPipes(new ValidationPipe());
 
   const options = new DocumentBuilder()
     .setTitle('REST API Example')

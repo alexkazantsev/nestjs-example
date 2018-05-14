@@ -17,4 +17,5 @@ export const ORM_COFIG = {
   database: DB_NAME,
   entities: [__dirname + '/../**/*.entity{.ts,.js}'],
   synchronize: true,
+  logging: true,
 } as ConnectionOptions;

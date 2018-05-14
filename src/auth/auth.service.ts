@@ -6,9 +6,10 @@ import { JwtPayload } from './interfaces/jwt-payload.interface';
 
 @Injectable()
 export class AuthService {
-  async createToken(): Promise<TokenResponse> {
+
+  async createToken(email: string, id: number): Promise<TokenResponse> {
     const expiresIn = 60 * 60 * 60, secretOrKey = 'secret';
-    const user = { email: 'thisis@example.com' };
+    const user = { email, id };
     const token = jwt.sign(user, secretOrKey, { expiresIn });
     return {
       expires_in: expiresIn,

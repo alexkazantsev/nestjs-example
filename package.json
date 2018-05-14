@@ -17,6 +17,7 @@
     "@nestjs/testing": "^5.0.0-rc.3",
     "@nestjs/typeorm": "^2.0.0",
     "@nestjs/websockets": "^5.0.0-rc.3",
+    "bcrypt": "^2.0.1",
     "class-transformer": "^0.1.9",
     "class-validator": "^0.8.5",
     "cli-color": "^1.2.0",
@@ -35,6 +36,7 @@
     "winston": "^2.4.1"
   },
   "devDependencies": {
+    "@types/bcrypt": "^2.0.0",
     "@types/cli-color": "^0.3.29",
     "@types/lodash": "^4.14.106",
     "@types/node": "^9.3.0",

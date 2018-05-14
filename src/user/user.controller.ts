@@ -14,14 +14,16 @@ export class UserController {
   constructor(private readonly userService: UserService) { }
 
   @Get()
+  // @UseGuards(AuthGuard('jwt'))
   async fetchAll(): Promise<User[]> {
     return this.userService.findAll();
   }
 
   @Post()
   @UseGuards(AuthGuard('jwt'))
-  async create(@Body() user: CreateUserDto): Promise<boolean> {
-    return true;
+  async create(@Body() userDto: CreateUserDto): Promise<User> {
+    const user = this.userService.create(userDto);
+    return user;
   }
 
   @Put('/:id')

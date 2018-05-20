@@ -7,7 +7,6 @@ import { UserService } from './user.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 
-@ApiBearerAuth()
 @ApiUseTags('user')
 @Controller('user')
 export class UserController {
@@ -16,6 +15,7 @@ export class UserController {
 
   @Get()
   @UseGuards(AuthGuard('jwt'))
+  @ApiBearerAuth()
   @ApiOperation({ title: 'Get all users' })
   async fetchAll(): Promise<User[]> {
     return this.userService.findAll();
@@ -31,6 +31,7 @@ export class UserController {
 
   @Put('/:id')
   @UseGuards(AuthGuard('jwt'))
+  @ApiBearerAuth()
   @ApiOperation({ title: 'Update an existing user' })
   async update(@Body() userDto: UpdateUserDto, @Param('id') userId: number): Promise<User> {
     const user = this.userService.findById(userId);
@@ -41,6 +42,7 @@ export class UserController {
   @Delete('/:id')
   @HttpCode(204)
   @UseGuards(AuthGuard('jwt'))
+  @ApiBearerAuth()
   @ApiOperation({ title: 'Delete user' })
   async remove(@Param('id') userId: number): Promise<any> {
     return this.userService.remove(userId);

@@ -3,7 +3,6 @@ import {
   SubscribeMessage,
   WsResponse,
   WebSocketServer,
-  WsException,
 } from '@nestjs/websockets';
 import { Observable, from } from 'rxjs';
 import { map } from 'rxjs/operators';

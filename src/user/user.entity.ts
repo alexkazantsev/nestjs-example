@@ -1,5 +1,4 @@
 import { Entity, Column, PrimaryGeneratedColumn, Index } from 'typeorm';
-import { CreateUserDto } from './dto/create-user.dto';
 
 @Entity()
 export class User {
@@ -17,16 +16,7 @@ export class User {
   @Column({ unique: true, length: 255 })
   email: string;
 
-  @Column({ length: 255, select: false })
+  @Column({ length: 255 })
   password: string;
-
-  constructor(createUserDto?: CreateUserDto) {
-    if (createUserDto) {
-      this.first_name = createUserDto.first_name;
-      this.last_name = createUserDto.last_name;
-      this.email = createUserDto.email;
-      this.password = createUserDto.password;
-    }
-  }
 
 }

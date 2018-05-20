@@ -1,6 +1,9 @@
 NODE_ENV=development
 LOG_LEVEL=debug
 
+JWT_SECRET=_]Zb53"5.`W(;HGcpb^PWeT);yAnX8yB)`/^Ht%2
+JWT_EXPIRES=1d
+
 DB_HOST=nest-example-db
 DB_PORT=3306
 DB_USER=root

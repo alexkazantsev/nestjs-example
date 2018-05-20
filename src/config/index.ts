@@ -5,6 +5,8 @@ const {
   DB_PASSWORD,
   DB_NAME,
   LOG_LEVEL,
+  JWT_SECRET,
+  JWT_EXPIRES,
 } = process.env;
 import { ORM_COFIG } from './orm.config';
 
@@ -16,4 +18,6 @@ export {
   DB_NAME,
   LOG_LEVEL,
   ORM_COFIG,
+  JWT_SECRET,
+  JWT_EXPIRES,
 };

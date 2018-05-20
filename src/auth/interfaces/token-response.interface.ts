@@ -1,4 +1,4 @@
 export interface TokenResponse {
-  expires_in: number;
+  expires_in: string | number;
   access_token: string;
 }

@@ -1,14 +1,12 @@
 import { NestFactory } from '@nestjs/core';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
-import * as cors from 'cors';
 
 import { ApplicationModule } from './app.module';
 import { ReqeustLoggerInterceptor } from './common/interceptors';
 import { ValidationPipe } from './common/pipes/validation.pipe';
 
 async function bootstrap() {
-  const app = await NestFactory.create(ApplicationModule);
-  app.use(cors());
+  const app = await NestFactory.create(ApplicationModule, { cors: true });
   app.useGlobalInterceptors(new ReqeustLoggerInterceptor());
   app.useGlobalPipes(new ValidationPipe());
 
